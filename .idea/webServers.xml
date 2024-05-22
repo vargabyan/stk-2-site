@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4da036e2-94a2-44dc-879e-e07d0efaf424" name="stk-2-site">
+        <fileTransfer rootFolder="/home/c84317/stk-2-site.vm-9aa0b6b3.na4u.ru/www" accessType="SFTP" host="h47.netangels.ru" port="22" sshConfigId="e3f29a3a-b5ad-460c-9667-c5f786ed1d42" sshConfig="c84317@h47.netangels.ru:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
