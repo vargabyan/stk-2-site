@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="jvectormap.css">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="jvectormap.js"></script>
+    <script src="jquery-jvectormap-ru-merc.js"></script>
     <title>stk site 2</title>
 </head>
 <body>
