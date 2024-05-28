@@ -2,6 +2,11 @@
 
 
 <?php
+require 'breadcrumb.php';
+breadcrumb([['url' => '/catalog', 'name' => 'Каталог']]);
+?>
+
+<?php
 $response_data_materials = [
     [
         'image' => './images/product-1.png',
@@ -143,7 +148,6 @@ $response_data_materials = [
     ],
 ]
 ?>
-
 
 <section class="core-container materials">
     <h2 class="materials_header site-header">Каталог</h2>

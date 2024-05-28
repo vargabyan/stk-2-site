@@ -317,11 +317,11 @@ document.addEventListener('click', e => {
 document.addEventListener('DOMContentLoaded', () => {
     const allItem = document.querySelectorAll('[data-product-characteristic-text-wrapper]');
 
-    if (allItem && allItem.length > 2) {
+    if (allItem.length && allItem.length > 2) {
         const btn = document.querySelector('[data-product-characteristic-btn-more-details]');
 
         btn.classList.add('active')
-    } else if (allItem && allItem.length <= 2) {
+    } else if (allItem.length && allItem.length <= 2) {
         const btn = document.querySelector('[data-product-characteristic-btn-more-details]');
 
         btn.classList.remove('active')

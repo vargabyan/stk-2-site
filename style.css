@@ -114,6 +114,7 @@ table {
     align-items: center;
     border-radius: 8px;
     background: #383838;
+    text-decoration: unset;
 
     color: #FFF;
     font-family: Inter;
@@ -710,6 +711,10 @@ table {
     background: #FFF;
 }
 
+[data-page-type="about"] .often-ordering-in-bulk_item-head-wrapper {
+    padding: 20px;
+}
+
 .often-ordering-in-bulk_item_img {
     width: 100%;
     height: 100%;
@@ -720,6 +725,14 @@ table {
 .often-ordering-in-bulk_item_title {
     font-size: 24px;
     line-height: 140%;
+}
+
+.often-ordering-in-bulk_item_text {
+    margin-top: -10px;
+
+    color: #959595;
+    font-size: 18px;
+    line-height: 120%;
 }
 
 .often-ordering-in-bulk_item_btn {
@@ -1382,6 +1395,208 @@ table {
 }
 
 
+.about-company {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-company_content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    column-gap: 60px;
+    row-gap: 49px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #FFF;
+}
+
+.about-company_item {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.about-company_title {
+    font-size: 24px;
+    line-height: 140%;
+}
+
+.about-company_text {
+    color: #444;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 130%;
+}
+
+
+
+
+
+
+.only-the-best-materials {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.only-the-best-materials_content {
+    display: grid;
+    grid-template-areas:
+            'A A B'
+            'C D D';
+    gap: 20px;
+    grid-template-rows: 1fr 1fr;
+}
+
+.only-the-best-materials_item {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+
+}.only-the-best-materials_item:nth-child(1) {
+    grid-area: A;
+}.only-the-best-materials_item:nth-child(2) {
+    grid-area: B;
+}.only-the-best-materials_item:nth-child(3) {
+    grid-area: C;
+}.only-the-best-materials_item:nth-child(4) {
+    grid-area: D;
+}
+
+
+.contacts-and-requisites {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+[data-page-type="contacts"].contacts-and-requisites {
+    margin-top: 20px;
+}
+
+.contacts-and-requisites_head-wrapper {
+    display: flex;
+    gap: 18px;
+}
+
+.contacts-and-requisites_download {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+    color: #959595;
+    font-family: Inter;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.contacts-and-requisites_download:before {
+    display: block;
+    content: '';
+    width: 16px;
+    height: 25px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='25' viewBox='0 0 16 25' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.97932 0.75C7.7141 0.75 7.45975 0.853853 7.27221 1.03872C7.08468 1.22358 6.97932 1.47431 6.97932 1.73575L6.97932 15.3176L1.69932 9.85261C1.51343 9.67334 1.26401 9.57251 1.00396 9.57149C0.743905 9.57048 0.493681 9.66937 0.306359 9.84718C0.119037 10.025 0.00935256 10.2677 0.000570907 10.5239C-0.00821075 10.7801 0.0846014 11.0296 0.259321 11.2195L7.25932 18.4483C7.3526 18.5437 7.46444 18.6196 7.58815 18.6715C7.71186 18.7233 7.8449 18.75 7.97932 18.75C8.11374 18.75 8.24678 18.7233 8.37049 18.6715C8.4942 18.6196 8.60604 18.5437 8.69932 18.4483L15.6993 11.2195C15.795 11.1273 15.8709 11.017 15.9225 10.8953C15.9742 10.7736 16.0005 10.6429 16 10.511C15.9995 10.3791 15.9721 10.2486 15.9195 10.1273C15.8668 10.006 15.79 9.89635 15.6936 9.80484C15.5972 9.71333 15.4832 9.64183 15.3582 9.59457C15.2333 9.54731 15.1 9.52525 14.9662 9.52971C14.8325 9.53416 14.701 9.56504 14.5796 9.62051C14.4581 9.67597 14.3492 9.7549 14.2593 9.85261L8.97932 15.3176L8.97932 1.73575C8.97932 1.47431 8.87396 1.22358 8.68643 1.03872C8.49889 0.853853 8.24454 0.75 7.97932 0.75Z' fill='%239E9EA2'/%3E%3Crect y='22.25' width='16' height='2' rx='1' fill='%239E9EA2'/%3E%3C/svg%3E");
+}
+
+.contacts-and-requisites_content {
+    border-radius: 12px;
+    padding: 20px;
+    background: #FFF;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 30px;
+}
+
+[data-page-type="contacts"] .contacts-and-requisites_content {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    column-gap: 40px;
+}
+
+.contacts-and-requisites_item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contacts-and-requisites_title {
+    color: #959595;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.contacts-and-requisites_text {
+    color: #444;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+
+.our-office {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.our-office_img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    min-height: 162px;
+}
+
+
+.warning {
+    margin-top: 60px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.warning_img {
+    max-width: 644px;
+    width: 100%;
+    min-height: 127px;
+}
+
+.warning_subtitle {
+    color: #313131;
+    text-align: center;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.warning_btn {
+    min-width: 311px;
+    width: max-content;
+}
+
+
+.policy {
+    margin-top: 37px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.policy_content {
+    max-width: 903px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    color: #444;
+    font-size: 18px;
+    line-height: 130%;
+}
+
 
 
 
@@ -1664,6 +1879,16 @@ table {
     }
 
 
+    .only-the-best-materials_content {
+        grid-template-areas:
+            'A A'
+            'B C'
+            'D D';
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+
+
 
     .footer_content {
         display: flex;
@@ -1857,6 +2082,10 @@ table {
         background: unset;
     }
 
+    [data-page-type="about"] .often-ordering-in-bulk_item-head-wrapper {
+        padding: 0;
+    }
+
     .often-ordering-in-bulk_item_img {
         width: 100%;
         height: 176px;
@@ -1865,6 +2094,12 @@ table {
     .often-ordering-in-bulk_item_title {
         font-size: 20px;
         line-height: 130%;
+    }
+
+    .often-ordering-in-bulk_item_text {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 140%;
     }
 
     .often-ordering-in-bulk_item_btn {
@@ -2144,6 +2379,121 @@ table {
     }
 
 
+    .about-company {
+        gap: 14px;
+    }
+
+    .about-company_content {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        padding: 22px 12px;
+    }
+
+    .about-company_item {
+        gap: 12px;
+    }
+
+    .about-company_title {
+        font-size: 20px;
+        line-height: 130%;
+    }
+
+    .about-company_text {
+        font-size: 16px;
+        line-height: 140%;
+    }
+
+
+    .only-the-best-materials {
+        margin-top: 60px;
+        gap: 14px;
+    }
+
+    .only-the-best-materials_content {
+        gap: 12px;
+    }
+
+
+    .contacts-and-requisites {
+        margin-top: 60px;
+        gap: 14px;
+        padding: 22px 12px;
+    }
+
+    .contacts-and-requisites[data-page-type="contacts"] {
+        margin-top: 20px;
+    }
+
+    .contacts-and-requisites_head-wrapper {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .contacts-and-requisites_download {
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .contacts-and-requisites_content {
+        padding: 22px 12px;
+    }
+
+    .contacts-and-requisites_item {
+        gap: 8px;
+    }
+
+    .contacts-and-requisites_title {
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .contacts-and-requisites_text {
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+
+    .our-office {
+        margin-top: 60px;
+        gap: 14px;
+    }
+
+
+    .warning {
+        margin-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    .warning_subtitle {
+        text-align: left;
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .warning_btn {
+        width: 100%;
+    }
+
+
+    .policy {
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    .policy_header {
+        font-family: Inter;
+
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 130%;
+    }
+
+    .policy_content {
+        gap: 10px;
+
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 140%;
+    }
 
 
 
@@ -2158,8 +2508,12 @@ table {
 
 
     .footer {
-        margin-top: 28px;
+        margin-top: 60px;
         gap: 60px;
+    }
+
+    .footer[data-page-type="home"] {
+        margin-top: 28px;
     }
 
     .footer_container {
