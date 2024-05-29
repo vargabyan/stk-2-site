@@ -7,13 +7,12 @@
     <div class="core-container banner_container">
         <h1 class="site-header banner-header">Нерудные материалы <br> Продажа и поставка в Новом Уренгое</h1>
         <span class="banner_subtitle">Комплексные поставки нерудных материалов: щебня, песка, бетона и железобетонных изделий</span>
-        <button class="banner_btn btn-grey">Оптовый заказ</button>
+        <button class="banner_btn btn-grey" data-order-popup="order-wholesale">Оптовый заказ</button>
     </div>
 </section>
 
 
 <?php
-
 $response_data_materials = [
     [
         'image' => './images/product-1.png',
@@ -154,9 +153,7 @@ $response_data_materials = [
         ],
     ],
 ]
-
 ?>
-
 
 <section class="core-container materials">
     <a class="materials_header-wrapper" href="/catalog.php">
@@ -187,7 +184,6 @@ $response_data_materials = [
 
 
 <?php
-
 $response_data_often_ordering_in_bulk = [
     [
         'image' => './images/often-ordering-in-bulk-product-1.png',
@@ -210,9 +206,7 @@ $response_data_often_ordering_in_bulk = [
         'url' => '/catalog',
     ],
 ]
-
 ?>
-
 
 <section class="core-container slider-section">
     <div class="slider-section_head-wrapper">
@@ -242,7 +236,6 @@ $response_data_often_ordering_in_bulk = [
 
 
 <?php
-
 $response_data_review = [
     [
         'image' => '',
@@ -269,9 +262,7 @@ $response_data_review = [
         'comment' => 'Цена и ассортимент — не на всяком рынке или магазине найдёшь. Доставка состоялась Цена и ассортимент не на всяком рынке или магазине найдёшь. Доставка состоялась Цена и ассортимент не на всяком рынке Доставка состоялась Цена и ассортимент не на всяком рынке',
     ]
 ]
-
 ?>
-
 
 <section class="core-container slider-section">
     <div class="slider-section_head-wrapper">
@@ -315,7 +306,7 @@ $response_data_review = [
             Наш менеджер поможет с выбором и подберёт оптимальную услугу для вашего бизнеса
         </p>
         <img class="order-a-call_img" src="./images/order-a-call.png" alt="image">
-        <button class="order-a-call_btn btn-white">Заказать звонок</button>
+        <button class="order-a-call_btn btn-white" data-order-popup="order-a-call">Заказать звонок</button>
     </div>
 </section>
 
@@ -353,7 +344,6 @@ $response_data_review = [
 
 
 <?php
-
 $response_data_our_services = [
     [
         'image' => './images/our-services-1.png',
@@ -376,10 +366,7 @@ $response_data_our_services = [
         'title' => 'Автозимник - зимняя дорога',
     ],
 ]
-
 ?>
-
-
 
 <section class="core-container our-services">
     <h2 class="site-header our-services_header">Наши услуги</h2>
@@ -422,7 +409,6 @@ $response_data_our_services = [
 
 
 <?php
-
 $response_data_question = [
     [
         'question' => 'Какие способы поставки материалов можно выбрать в вашей компании? Какие способы поставки материалов можно выбрать в вашей компании?',
@@ -445,9 +431,7 @@ $response_data_question = [
         'answer' => 'Цена и ассортимент. Доставка состоялась Цена и ассортимент — не на всяком рынке или магазине найдёшь. Доставка состоялась Цена и ассортимент — не на всяком рынке Подробнее',
     ],
 ]
-
 ?>
-
 
 <section class="core-container questions" data-questions>
     <h2 class="questions_header site-header">Часто задаваемые вопросы</h2>

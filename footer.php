@@ -20,7 +20,7 @@
                         <li><a href="">О компании</a></li>
                     </ul>
                 </nav>
-                <button class="footer_btn btn-grey">Заказать звонок</button>
+                <button class="footer_btn btn-grey" data-order-popup="order-a-call">Заказать звонок</button>
             </nav>
             <div class="footer_contacts-wrapper">
                 <p>Почта<a href="mailto:pochta@gmail.com">pochta@gmail.com</a></p>
@@ -30,11 +30,14 @@
         <div class="footer_policy-wrapper">
             <p class="footer_policy_title">© Copyright 2021-2023 Pro MK</p>
             <a class="footer_site-map" href="">Карта сайта</a>
-            <a class="footer_policy" href="">Политика конфиденциальности</a>
+            <a class="footer_policy" href="/policy.php">Политика конфиденциальности</a>
         </div>
     </div>
 </footer>
 
+<?php
+require 'popups.php';
+?>
 
 <script src="swiper-bundle.min.js"></script>
 <script src="scripts.js"></script>

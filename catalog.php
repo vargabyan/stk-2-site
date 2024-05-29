@@ -182,7 +182,7 @@ $response_data_materials = [
             Наш менеджер поможет с выбором и подберёт оптимальную услугу для вашего бизнеса
         </p>
         <img class="order-a-call_img" src="./images/order-a-call.png" alt="image">
-        <button class="order-a-call_btn btn-white">Заказать звонок</button>
+        <button class="order-a-call_btn btn-white" data-order-popup="order-a-call">Заказать звонок</button>
     </div>
 </section>
 

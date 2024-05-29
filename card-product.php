@@ -16,7 +16,7 @@ breadcrumb([['url' => '/catalog', 'name' => 'Каталог'], ['url' => '/', 'n
         </p>
         <div class="card-product_footer">
             <span class="card-product_In-stock">В наличии</span>
-            <button class="card-product_btn-order btn-grey">Закать</button>
+            <button class="card-product_btn-order btn-grey" data-order-popup="order-products">Закать</button>
         </div>
     </div>
     <img class="card-product_img" src="images/card-product-1.png" alt="image" data-card-product-img>
@@ -89,7 +89,7 @@ breadcrumb([['url' => '/catalog', 'name' => 'Каталог'], ['url' => '/', 'n
                 Наш менеджер поможет с выбором и подберёт оптимальную услугу для вашего бизнеса
             </p>
             <img class="order-a-call_img" src="./images/order-a-call.png" alt="image">
-            <button class="order-a-call_btn btn-white">Заказать звонок</button>
+            <button class="order-a-call_btn btn-white" data-order-popup="order-products">Заказать</button>
         </div>
     </section>
 </section>

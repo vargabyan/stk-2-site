@@ -198,7 +198,7 @@ $response_data_menu_link = [
                 <li><a href="mailto:pochta@gmail.com">pochta@gmail.com</a></li>
                 <li><a href="tel:+7 912 000 00 00">+7 912 000 00 00</a></li>
             </ul>
-            <button class="core-head_btn-order-call btn-transparent">Заказать звонок</button>
+            <button class="core-head_btn-order-call btn-transparent" data-order-popup="order-a-call">Заказать звонок</button>
         </div>
         <div class="appbar-wrapper" data-appbar-wrapper>
             <div class="appbar_container">

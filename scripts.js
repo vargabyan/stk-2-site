@@ -353,6 +353,49 @@ window.addEventListener('resize', () => {
 });
 
 
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-popup-btn-close]');
+
+    if (btn) {
+        const wrapper = btn.closest('.active[data-popup-wrapper]');
+        const container = wrapper.querySelector('.active[data-popup-container]');
+        const successContainer = wrapper.querySelector('.active[data-success-container]');
+
+        wrapper.classList.remove('active');
+        if (container) container.classList.remove('active');
+        if (successContainer) successContainer.classList.remove('active');
+        document.querySelector('body').style['overflow'] = '';
+    }
+})
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-popup-btn-submit]');
+
+    if (btn) {
+        e.preventDefault();
+        const wrapper = btn.closest('.active[data-popup-wrapper]');
+        const container = wrapper.querySelector('.active[data-popup-container]');
+        const successContainer = wrapper.querySelector('[data-success-container]');
+
+        container.classList.remove('active');
+        successContainer.classList.add('active');
+    }
+})
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-order-popup]');
+
+    if (btn) {
+        const popupID = btn.getAttribute('data-order-popup');
+        const wrapper = document.querySelector(`[data-popup-wrapper="${popupID}"]`);
+        const container = wrapper.querySelector('[data-popup-container]');
+
+        wrapper.classList.add('active');
+        container.classList.add('active');
+        document.querySelector('body').style['overflow'] = 'hidden';
+    }
+})
+
 
 
 
