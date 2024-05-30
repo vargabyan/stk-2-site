@@ -1804,6 +1804,173 @@ table {
 }
 
 
+.search {
+    margin-top: 20px;
+}
+
+.search-result {
+    width: 100%;
+    padding: 22px 20px;
+    border-radius: 12px;
+    background: #FFF;
+
+    color: var(--3);
+    font-size: 18px;
+    line-height: 22px;
+}
+
+
+.search-note-result {
+    margin-top: 111px;
+    padding-bottom: 185px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 33px;
+}
+
+.search-no-result_icon {
+    display: flex;
+    content: '';
+    width: 146px;
+    height: 156px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='146' height='156' viewBox='0 0 146 156' fill='none'%3E%3Crect x='55.9609' y='81' width='22.0689' height='82' rx='4' transform='rotate(43.0349 55.9609 81)' fill='%23CACACA'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M146 57.5C146 89.2564 120.256 115 88.5 115C56.7436 115 31 89.2564 31 57.5C31 25.7436 56.7436 0 88.5 0C120.256 0 146 25.7436 146 57.5ZM88.5 93C108.106 93 124 77.1061 124 57.5C124 37.8939 108.106 22 88.5 22C68.8939 22 53 37.8939 53 57.5C53 77.1061 68.8939 93 88.5 93Z' fill='%23CACACA'/%3E%3C/svg%3E");
+}
+
+.search-no-result_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.search-no-result_title {
+    text-align: center;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.search-no-result_btn {
+    min-width: 311px;
+    width: max-content;
+}
+
+
+.filter {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter_form {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 16px 20px;
+    align-items: center;
+    border-radius: 12px;
+    background: #FFF;
+}
+
+.filter_form_label-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.filter_label {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--3);
+    font-family: Inter;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.filter_label input {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.filter_sort-wrapper {
+    width: 264px;
+    min-height: 37px;
+    position: relative;
+}
+
+.filter_sort {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    padding: 6px 8px;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 8px;
+    border: 1px solid #969696;
+    background: #FFF;
+}
+
+.filter_sort_select-value,
+.filter_sort_label {
+    color: #969696;
+    font-family: Inter;
+    font-size: 18px;
+    line-height: 140%;
+}
+
+.filter_sort_select-value {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter_sort_select-value:after {
+    display: block;
+    content: '';
+    width: 14px;
+    height: 7px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='7' viewBox='0 0 14 7' fill='none'%3E%3Cpath d='M13 0.5L7 6.5L1 0.499999' stroke='%239E9EA2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.filter_sort_select-value.rotate:after {
+    transform: rotate(180deg);
+}
+
+.filter_sort_section {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter_sort_section.active {
+    display: flex;
+}
+
+.filter_sort_label {
+    position: relative;
+}
+
+.filter_sort_label input {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+
+
 
 
 
@@ -2184,6 +2351,11 @@ table {
     }
 
 
+    .header {
+        padding: 0;
+    }
+
+
     .banner_container {
         gap: 12px;
         display: grid;
@@ -2203,8 +2375,12 @@ table {
 
 
     .materials {
-        margin-top: 60px;
+        margin-top: 20px;
         gap: 14px;
+    }
+
+    .materials[data-page-type="home"] {
+        margin-top: 60px;
     }
 
     .materials_header-wrapper {
@@ -2801,6 +2977,109 @@ table {
     .success-container .popup_btn-submit{
         margin-top: 20px;
     }
+
+
+    .search {
+        margin-top: 16px;
+    }
+
+    .search-result {
+        padding: 12px;
+
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 140%;
+    }
+
+
+    .search-note-result {
+        margin-top: 166px;
+        padding-bottom: 100px;
+        gap: 7px;
+    }
+
+    .search-no-result_icon {
+        display: flex;
+        content: '';
+        width: 89px;
+        height: 95px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='89' height='95' viewBox='0 0 146 156' fill='none'%3E%3Crect x='55.9609' y='81' width='22.0689' height='82' rx='4' transform='rotate(43.0349 55.9609 81)' fill='%23CACACA'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M146 57.5C146 89.2564 120.256 115 88.5 115C56.7436 115 31 89.2564 31 57.5C31 25.7436 56.7436 0 88.5 0C120.256 0 146 25.7436 146 57.5ZM88.5 93C108.106 93 124 77.1061 124 57.5C124 37.8939 108.106 22 88.5 22C68.8939 22 53 37.8939 53 57.5C53 77.1061 68.8939 93 88.5 93Z' fill='%23CACACA'/%3E%3C/svg%3E");
+    }
+
+    .search-no-result_footer {
+        gap: 38px;
+    }
+
+    .search-no-result_title {
+        max-width: 280px;
+
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+
+    .filter {
+        margin-top: 14px;
+        gap: 14px;
+    }
+
+    .filter_form {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .filter_form_label-wrapper {
+        gap: 20px;
+    }
+
+    .filter_label {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 140%;
+    }
+
+    .filter_sort-wrapper {
+        width: 100%;
+    }
+
+    .filter_sort {
+        padding: 8px;
+        gap: 12px;
+        border-radius: 8px;
+    }
+
+    .filter_sort_select-value,
+    .filter_sort_label {
+        font-size: 16px;
+        font-weight: 300;
+    }
+
+    .filter_sort_section {
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .filter_sort_section.active {
+        display: flex;
+        position: fixed;
+    }
+
+    .filter_sort_label {
+        position: relative;
+    }
+
+    .filter_sort_label input {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        cursor: pointer;
+        opacity: 0;
+    }
+
 
 
 

@@ -155,7 +155,7 @@ $response_data_materials = [
 ]
 ?>
 
-<section class="core-container materials">
+<section class="core-container materials" data-page-type="home">
     <a class="materials_header-wrapper" href="/catalog.php">
         <h2 class="materials_header site-header">Нерудные материалы</h2>
     </a>
@@ -188,22 +188,22 @@ $response_data_often_ordering_in_bulk = [
     [
         'image' => './images/often-ordering-in-bulk-product-1.png',
         'title' => 'Песок крупнозернистый 3–5 мм',
-        'url' => '/catalog',
+        'url' => '/catalog.php',
     ],
     [
         'image' => './images/often-ordering-in-bulk-product-2.png',
         'title' => 'Песок крупнозернистый 3–5 мм',
-        'url' => '/catalog',
+        'url' => '/catalog.php',
     ],
     [
         'image' => './images/often-ordering-in-bulk-product-3.png',
         'title' => 'Песок крупнозернистый 3–5 мм',
-        'url' => '/catalog',
+        'url' => '/catalog.php',
     ],
     [
         'image' => './images/often-ordering-in-bulk-product-3.png',
         'title' => 'Песок крупнозернистый 3–5 мм',
-        'url' => '/catalog',
+        'url' => '/catalog.php',
     ],
 ]
 ?>
@@ -382,7 +382,7 @@ $response_data_our_services = [
                 <span>Заказать звонок, чтобы узнать подробнее</span>
                 Наш менеджер поможет с выбором и подберёт оптимальную услугу для вашего бизнеса
             </p>
-            <button class="our-services_last-item_btn btn-white">Заказать звонок</button>
+            <button class="our-services_last-item_btn btn-white" data-order-popup="order-a-call">Заказать звонок</button>
         </div>
     </div>
 </section>

@@ -397,6 +397,33 @@ document.addEventListener('click', e => {
 })
 
 
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-filter-sort-value]');
+
+    if (btn) {
+        const wrapper = document.querySelector('[data-filter-sort]');
+        const section = wrapper.querySelector('[data-filter-section]');
+
+        btn.classList.toggle('rotate');
+        section.classList.toggle('active');
+    }
+})
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-filter-section] input');
+
+    if (btn) {
+        const wrapper = document.querySelector('[data-filter-sort]');
+        const sortValue = wrapper.querySelector('[data-filter-sort-value]');
+        const section = wrapper.querySelector('[data-filter-section]');
+
+        sortValue.textContent = btn.value;
+        sortValue.classList.toggle('rotate');
+        section.classList.toggle('active');
+    }
+})
+
+
 
 
 

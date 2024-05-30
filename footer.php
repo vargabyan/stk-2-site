@@ -7,17 +7,17 @@
             <nav class="footer_nav-wrapper">
                 <nav class="footer_nav">
                     <ul class="footer_catalog-wrapper" data-footer-catalog-wrapper>
-                        <li data-footer-catalog-btn><a href="">Каталог</a></li>
-                        <li><a href="">Щебень</a></li>
-                        <li><a href="">Песок</a></li>
-                        <li><a href="">Бетон</a></li>
-                        <li><a href="">Строительные растворы (смеси)</a></li>
-                        <li><a href="">Железобетонные изделия (ЖБИ)</a></li>
-                        <li><a href="">Торф</a></li>
+                        <li data-footer-catalog-btn><a href="/catalog.php">Каталог</a></li>
+                        <li><a href="/category.php">Щебень</a></li>
+                        <li><a href="/category.php">Песок</a></li>
+                        <li><a href="/category.php">Бетон</a></li>
+                        <li><a href="/category.php">Строительные растворы (смеси)</a></li>
+                        <li><a href="/category.php">Железобетонные изделия (ЖБИ)</a></li>
+                        <li><a href="/category.php">Торф</a></li>
                     </ul>
                     <ul class="footer_pages-link-wrapper">
-                        <li><a href="">Контакты</a></li>
-                        <li><a href="">О компании</a></li>
+                        <li><a href="/contacts.php">Контакты</a></li>
+                        <li><a href="/about.php">О компании</a></li>
                     </ul>
                 </nav>
                 <button class="footer_btn btn-grey" data-order-popup="order-a-call">Заказать звонок</button>

@@ -203,9 +203,9 @@ $response_data_menu_link = [
         <div class="appbar-wrapper" data-appbar-wrapper>
             <div class="appbar_container">
                 <ul class="appbar_links-wrapper">
-                    <li><a href="/catalog" data-btn-open-menu>Каталог</a></li>
-                    <li><a href="/contacts">Контакты</a></li>
-                    <li><a href="/about">О компании</a></li>
+                    <li><a href="/catalog.php" data-btn-open-menu>Каталог</a></li>
+                    <li><a href="/contacts.php">Контакты</a></li>
+                    <li><a href="/about.php">О компании</a></li>
                 </ul>
                 <span class="appbar_working-hours">время работы: пн-пят 09:00–18:00</span>
             </div>

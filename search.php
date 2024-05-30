@@ -3,30 +3,12 @@
 
 <?php
 require 'breadcrumb.php';
-breadcrumb([['url' => '/catalog', 'name' => 'Каталог'], ['url' => '/category.php', 'name' => 'Бетон'], ['url' => '/product-catalog', 'name' => 'Тяжелый бетон']]);
+breadcrumb([['url' => '/search', 'name' => 'Поиск']]);
 ?>
 
 
-<section class="core-container filter">
-    <h1 class="product-category_header site-header">Тяжелый бетон</h1>
-    <form class="filter_form" action="">
-        <div class="filter_form_label-wrapper">
-            <label class="filter_label"><input type="checkbox" checked> Крупнозернистый песок </label>
-            <label class="filter_label"><input type="checkbox"> Средний песок </label>
-            <label class="filter_label"><input type="checkbox"> Мелкозернистый песок </label>
-        </div>
-        <div class="filter_sort-wrapper">
-            <div class="filter_sort" data-filter-sort>
-                <span class="filter_sort_select-value" data-filter-sort-value>Сортировать</span>
-                <div class="filter_sort_section-wrapper" data-filter-section>
-                    <div class="filter_sort_section">
-                        <label class="filter_sort_label">по популярности<input type="radio" value="по популярности" name="sort"></label>
-                        <label class="filter_sort_label">по актуальности<input type="radio" value="по актуальности" name="sort"></label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
+<section class="core-container search">
+    <p class="search-result">7 результатов по запросу: песок крупнозернистый</p>
 </section>
 
 
@@ -45,16 +27,6 @@ $response_data_often_ordering_in_bulk = [
     [
         'image' => './images/often-ordering-in-bulk-product-1.png',
         'title' => 'Песок крупнозернистый 3–5 мм',
-        'url' => '/card-product.php',
-    ],
-    [
-        'image' => './images/often-ordering-in-bulk-product-1.png',
-        'title' => 'Тяжелый бетон В7.5 М100',
-        'url' => '/card-product.php',
-    ],
-    [
-        'image' => './images/often-ordering-in-bulk-product-1.png',
-        'title' => 'Тяжелый бетон В7.5 М100',
         'url' => '/card-product.php',
     ],
     [
@@ -109,6 +81,67 @@ if(isset($_GET["page"])) {
         <li><a class="<?= $url_page === '5' ? 'active'  : '' ?>" href="?page=5">5</a></li>
         <li><a href="?page=<?php if($url_page > 0 )echo $url_page + 1 ?>"></a></li>
     </ul>
+</section>
+
+
+<section class="core-container search-note-result">
+    <span class="search-no-result_icon"></span>
+    <div class="search-no-result_footer">
+        <p class="search-no-result_title">Ой… кажется по вашему запросу ничего не нашлось</p>
+        <a class="search-no-result_btn btn-grey" href="/catalog.php">В каталог</a>
+    </div>
+</section>
+
+
+<?php
+$response_data_often_ordering_in_bulk = [
+    [
+        'image' => './images/often-ordering-in-bulk-product-1.png',
+        'title' => 'Песок крупнозернистый 3–5 мм',
+        'url' => '/catalog.php',
+    ],
+    [
+        'image' => './images/often-ordering-in-bulk-product-2.png',
+        'title' => 'Песок крупнозернистый 3–5 мм',
+        'url' => '/catalog.php',
+    ],
+    [
+        'image' => './images/often-ordering-in-bulk-product-3.png',
+        'title' => 'Песок крупнозернистый 3–5 мм',
+        'url' => '/catalog.php',
+    ],
+    [
+        'image' => './images/often-ordering-in-bulk-product-3.png',
+        'title' => 'Песок крупнозернистый 3–5 мм',
+        'url' => '/catalog.php',
+    ],
+]
+?>
+
+<section class="core-container slider-section">
+    <div class="slider-section_head-wrapper">
+        <h2 class="slider-section_head site-header">Популярная оптовая продукция</h2>
+        <div class="slider-section_btn-wrapper">
+            <div class="slider-section_btn-prev" data-often-ordering-in-bulk-swiper-button-prev></div>
+            <div class="slider-section_btn-next" data-often-ordering-in-bulk-swiper-button-next></div>
+        </div>
+    </div>
+    <div class="slider-section_swiper" data-often-ordering-in-bulk-swiper>
+        <span class="animation_dot"></span>
+        <div class="swiper-wrapper">
+            <?php foreach ($response_data_often_ordering_in_bulk as $item) { ?>
+                <div class="swiper-slide">
+                    <div class="swiper-slide-item often-ordering-in-bulk_item">
+                        <div class="often-ordering-in-bulk_item-head-wrapper">
+                            <img class="often-ordering-in-bulk_item_img" src="<?= $item['image'] ?>" alt="">
+                            <p class="often-ordering-in-bulk_item_title"><?= $item['title'] ?></p>
+                        </div>
+                        <a class="often-ordering-in-bulk_item_btn btn-grey" href="<?= $item['url'] ?>">Закать</a>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
 </section>
 
 
