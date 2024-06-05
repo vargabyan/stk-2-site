@@ -3,7 +3,7 @@
         <div class="popup_head">
             <div class="popup_header-wrapper">
                 <h2 class="popup_header">Заказать звонок</h2>
-                <button type="button" class="popup_btn-close" data-popup-btn-close></button>
+                <button type="button" class="popup_btn-close btn-close" data-popup-btn-close></button>
             </div>
             <div class="popup_label-wrapper">
                 <label class="popup_label"><input type="text" placeholder="Имя"></label>
@@ -16,7 +16,7 @@
         </div>
     </form>
     <div class="success-container" data-success-containe>
-        <button class="popup_btn-close" data-popup-btn-close></button>
+        <button class="popup_btn-close btn-close" data-popup-btn-close></button>
         <span class="success-container_icon"></span>
         <h2 class="popup_header">
             Заявка отправлена
@@ -35,7 +35,7 @@
                     Заказать продукцию
                     <span>Мелкозернистый песок 0,7–1 мм</span>
                 </h2>
-                <button type="button" class="popup_btn-close" data-popup-btn-close></button>
+                <button type="button" class="popup_btn-close btn-close" data-popup-btn-close></button>
             </div>
             <div class="popup_label-wrapper">
                 <label class="popup_label"><input type="text" placeholder="Имя"></label>
@@ -48,7 +48,7 @@
         </div>
     </form>
     <div class="success-container" data-success-container>
-        <button class="popup_btn-close" data-popup-btn-close></button>
+        <button class="popup_btn-close btn-close" data-popup-btn-close></button>
         <span class="success-container_icon"></span>
         <h2 class="popup_header">
             Заявка отправлена
@@ -64,7 +64,7 @@
         <div class="popup_head">
             <div class="popup_header-wrapper">
                 <h2 class="popup_header">Оптовый заказ</h2>
-                <button type="button" class="popup_btn-close" data-popup-btn-close></button>
+                <button type="button" class="popup_btn-close btn-close" data-popup-btn-close></button>
             </div>
             <div class="popup_label-wrapper">
                 <label class="popup_label"><input type="text" placeholder="Имя"></label>
@@ -77,7 +77,7 @@
         </div>
     </form>
     <div class="success-container" data-success-container>
-        <button class="popup_btn-close" data-popup-btn-close></button>
+        <button class="popup_btn-close btn-close" data-popup-btn-close></button>
         <span class="success-container_icon"></span>
         <h2 class="popup_header">
             Заявка отправлена

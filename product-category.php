@@ -20,6 +20,10 @@ breadcrumb([['url' => '/catalog', 'name' => 'Каталог'], ['url' => '/categ
                 <span class="filter_sort_select-value" data-filter-sort-value>Сортировать</span>
                 <div class="filter_sort_section-wrapper" data-filter-section>
                     <div class="filter_sort_section">
+                        <div class="filter_sort_section_mobile-head">
+                            <span>Сортировать</span>
+                            <button type="button" class="filter_sort_section_mobile_btn-close btn-close" data-filter-sort-section-mobile-btn-close></button>
+                        </div>
                         <label class="filter_sort_label">по популярности<input type="radio" value="по популярности" name="sort"></label>
                         <label class="filter_sort_label">по актуальности<input type="radio" value="по актуальности" name="sort"></label>
                     </div>

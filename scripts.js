@@ -114,10 +114,24 @@ document.addEventListener('mouseover', e => {
 
     if (btn) {
         const appBar = btn.closest('[data-appBar-wrapper]');
-        const menu = appBar.querySelector('[data-menu-wrapper]');
+        const menu = appBar.querySelector('[data-menu-wrapper-bg]');
 
         btn.classList.add('active');
         menu.classList.add('active');
+        document.querySelector('body').style['overflow'] = 'hidden';
+    }
+})
+
+document.addEventListener('mouseover', e => {
+    const menuWrapperBg = document.querySelector('.active[data-menu-wrapper-bg]');
+
+    if (menuWrapperBg === e.target) {
+        const appBar = menuWrapperBg.closest('[data-appBar-wrapper]');
+        const btn = appBar.querySelector('[data-menu-wrapper-bg]');
+
+        btn.classList.remove('active');
+        menuWrapperBg.classList.remove('active');
+        document.querySelector('body').style['overflow'] = '';
     }
 })
 
@@ -128,17 +142,18 @@ document.addEventListener('DOMContentLoaded', e => {
 
     document.addEventListener('mouseout', e => {
         const activeBtnOpenMenu = e.target.closest('.active[data-btn-open-menu]');
-        const activeMenu = e.target.closest('.active[data-menu-wrapper]');
+        const activeMenu = e.target.closest('[data-menu-wrapper]');
 
         if (activeBtnOpenMenu || activeMenu) {
             const btnOpenMenu = document.querySelector('.active[data-btn-open-menu]');
-            const menu = document.querySelector('.active[data-menu-wrapper]');
+            const menu = document.querySelector('.active[data-menu-wrapper-bg]');
 
             setTimeout(() => {
-                if (!mousePosition.closest('.active[data-menu-wrapper]') && !mousePosition.closest('.active[data-btn-open-menu]')) {
+                if (!mousePosition.closest('[data-menu-wrapper]') && !mousePosition.closest('.active[data-btn-open-menu]')) {
 
                     btnOpenMenu.classList.remove('active');
                     menu.classList.remove('active');
+                    document.querySelector('body').style['overflow'] = '';
                 }
             }, 500)
         }
@@ -405,6 +420,20 @@ document.addEventListener('click', e => {
         const section = wrapper.querySelector('[data-filter-section]');
 
         btn.classList.toggle('rotate');
+        section.classList.toggle('active');
+    }
+})
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-filter-sort-section-mobile-btn-close]');
+    const wrapper = e.target === document.querySelector('.active[data-filter-section]');
+
+    if (btn || wrapper) {
+        const wrapper = document.querySelector('[data-filter-sort]');
+        const sortValue = wrapper.querySelector('[data-filter-sort-value]');
+        const section = wrapper.querySelector('[data-filter-section]');
+
+        sortValue.classList.toggle('rotate');
         section.classList.toggle('active');
     }
 })

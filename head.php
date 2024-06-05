@@ -209,29 +209,31 @@ $response_data_menu_link = [
                 </ul>
                 <span class="appbar_working-hours">время работы: пн-пят 09:00–18:00</span>
             </div>
-            <div class="appbar_menu-wrapper" data-menu-wrapper>
-                <div class="appbar_menu_container core-container">
-                    <ul class="appbar_menu">
-                        <?php foreach ($response_data_menu_link as $item) { ?>
-                            <li><a href="<?= $item['link'] ?>" data-appbar-menu-link-id="<?= $item['id'] ?>"><?= $item['name'] ?></a></li>
-                        <?php } ?>
-                    </ul>
-                    <div class="appbar_submenu">
-                        <?php foreach ($response_data_menu_link as $key => $item) { ?>
-                                <?php if ($key > 0) { ?>
-                                    <ul class="appbar_submenu_links" data-appbar-submenu-likks-id="<?= $item['id'] ?>">
-                                        <?php foreach ($item['sections'] as $sections_item) { ?>
-                                            <li><a href="<?= $item['link'] ?>"><?= $sections_item['name'] ?></a></li>
-                                        <?php } ?>
-                                    </ul>
-                                <?php } else { ?>
-                                    <ul class="appbar_submenu_links active" data-appbar-submenu-likks-id="<?= $item['id'] ?>">
-                                        <?php foreach ($item['sections'] as $sections_item) { ?>
-                                            <li><a href="<?= $item['link'] ?>"><?= $sections_item['name'] ?></a></li>
-                                        <?php } ?>
-                                    </ul>
+            <div class="appbar_menu-wrapper-bg" data-menu-wrapper-bg>
+                <div class="appbar_menu-wrapper" data-menu-wrapper>
+                    <div class="appbar_menu_container core-container">
+                        <ul class="appbar_menu">
+                            <?php foreach ($response_data_menu_link as $item) { ?>
+                                <li><a href="<?= $item['link'] ?>" data-appbar-menu-link-id="<?= $item['id'] ?>"><?= $item['name'] ?></a></li>
                             <?php } ?>
-                        <?php } ?>
+                        </ul>
+                        <div class="appbar_submenu">
+                            <?php foreach ($response_data_menu_link as $key => $item) { ?>
+                                    <?php if ($key > 0) { ?>
+                                        <ul class="appbar_submenu_links" data-appbar-submenu-likks-id="<?= $item['id'] ?>">
+                                            <?php foreach ($item['sections'] as $sections_item) { ?>
+                                                <li><a href="<?= $item['link'] ?>"><?= $sections_item['name'] ?></a></li>
+                                            <?php } ?>
+                                        </ul>
+                                    <?php } else { ?>
+                                        <ul class="appbar_submenu_links active" data-appbar-submenu-likks-id="<?= $item['id'] ?>">
+                                            <?php foreach ($item['sections'] as $sections_item) { ?>
+                                                <li><a href="<?= $item['link'] ?>"><?= $sections_item['name'] ?></a></li>
+                                            <?php } ?>
+                                        </ul>
+                                <?php } ?>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>
