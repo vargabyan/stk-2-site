@@ -86,3 +86,16 @@
         <button class="popup_btn-submit btn-grey" data-popup-btn-close>Готово</button>
     </div>
 </section>
+
+
+<section class="core-container popup-request-cookie-wrapper">
+    <section class="popup-request-cookie active" data-popup-wrapper>
+        <div class="popup-request-cookie_content">
+            <p>
+                При использовании данного сайта, вы подтверждаете своё согласие на использование файлов cookie и других похожих технологий в соответствии с настоящим Уведомлением.
+            </p>
+            <button type="button" class="popup_btn-close btn-close" data-popup-btn-close></button>
+        </div>
+        <button class="popup-request-cookie_btn-agree btn-transparent" data-popup-btn-close>Согласен</button>
+    </section>
+</section>

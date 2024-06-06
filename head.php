@@ -186,7 +186,24 @@ $response_data_menu_link = [
                     <img src="/images/logo.png" alt="logo">
                 </a>
                 <span class="core-head_logo-subtitle">добыча и поставка <br> нерудных материалов</span>
-                <button class="core-head_select-cities">Новой Уренгой</button>
+                <div class="core-head_select-cities-wrapper" data-core-head-select-cities-wrapper>
+                    <span class="core-head_select-cities" data-core-head-select-cities-value>Новой Уренгой</span>
+                    <div class="core-head_select-cities-form-wrapper" data-core-head-select-cities-form-wrapper>
+                        <div class="mobile-core-head_select-cities_head">
+                            <span class="mobile-core-head_select-cities_title">Новый Уренгой</span>
+                            <button class="btn-close" data-core-head-select-cities-btn-close></button>
+                        </div>
+                        <form class="core-head_select-cities-form" action="" data-core-head_select-cities-form>
+                            <label><input type="radio" name="city" value="Уфа">Уфа</label>
+                            <label><input type="radio" name="city" value="Москва">Москва</label>
+                            <label><input type="radio" name="city" value="Новой Уренгой">Новой Уренгой</label>
+                            <label><input type="radio" name="city" value="Екатеринбург">Екатеринбург</label>
+                            <label><input type="radio" name="city" value="Серов">Серов</label>
+                            <label><input type="radio" name="city" value="Казань">Казань</label>
+                            <label><input type="radio" name="city" value="Казань">Казань</label>
+                        </form>
+                    </div>
+                </div>
             </div>
             <form action="" class="core-head_search-form">
                 <label class="core-head_search-label" for="">
@@ -211,10 +228,10 @@ $response_data_menu_link = [
             </div>
             <div class="appbar_menu-wrapper-bg" data-menu-wrapper-bg>
                 <div class="appbar_menu-wrapper" data-menu-wrapper>
-                    <div class="appbar_menu_container core-container">
+                    <div class="appbar_menu_container core-container" data-appbar-menu-container>
                         <ul class="appbar_menu">
                             <?php foreach ($response_data_menu_link as $item) { ?>
-                                <li><a href="<?= $item['link'] ?>" data-appbar-menu-link-id="<?= $item['id'] ?>"><?= $item['name'] ?></a></li>
+                                <li><p data-appbar-menu-link-id="<?= $item['id'] ?>"><?= $item['name'] ?></p></li>
                             <?php } ?>
                         </ul>
                         <div class="appbar_submenu">
@@ -243,6 +260,47 @@ $response_data_menu_link = [
         <a class="mobil-core-head_logo" href="/">
             <img src="/images/logo.png" alt="logo">
         </a>
-        <button class="mobil-core-head_select-cities"></button>
+        <button class="mobil-core-head_select-cities" data-mobil-core-head-select-cities></button>
+    </div>
+    <div class="menu-mobile-wrapper" data-menu-mobile-wrapper>
+        <div class="menu-mobile_btn-wrapper" data-menu-mobile_btn-wrapper>
+            <button class="menu-mobile_btn-back" data-menu-mobile-btn-back>Назад</button>
+            <button class="btn-close" data-menu-mobile-btn-close></button>
+        </div>
+        <div class="menu-mobile_menu-wrapper active" data-menu-mobile-menu-wrapper>
+            <ul class="menu-mobile_menu">
+                <?php foreach ($response_data_menu_link as $item) { ?>
+                    <li><p data-mobile-menu-btn-link-id="<?= $item['id'] ?>"><?= $item['name'] ?></p></li>
+                <?php } ?>
+            </ul>
+        </div>
+        <div class="menu-mobile_submenu-wrapper" data-menu-mobile-submenu-wrapper>
+            <?php foreach ($response_data_menu_link as $key => $item) { ?>
+                <?php if ($key > 0) { ?>
+                    <ul class="menu-mobile_submenu_links" data-menu-mobile-submenu-links-id="<?= $item['id'] ?>">
+                        <?php foreach ($item['sections'] as $sections_item) { ?>
+                            <li><a href="<?= $item['link'] ?>"><?= $sections_item['name'] ?></a></li>
+                        <?php } ?>
+                    </ul>
+                <?php } else { ?>
+                    <ul class="menu-mobile_submenu_links active" data-menu-mobile-submenu-links-id="<?= $item['id'] ?>">
+                        <?php foreach ($item['sections'] as $sections_item) { ?>
+                            <li><a href="<?= $item['link'] ?>"><?= $sections_item['name'] ?></a></li>
+                        <?php } ?>
+                    </ul>
+                <?php } ?>
+            <?php } ?>
+        </div>
     </div>
 </header>
+
+
+<section class="core-container popup-request-correct-city-wrapper active" data-popup-wrapper>
+    <div class="popup-request-correct-city">
+        <p class="popup-request-correct-city_title">Ваш город <span> Новый Уренгой?</span></p>
+        <div class="popup-request-correct-city_btn-wrapper">
+            <button class="btn-transparent" data-select-another-city>Другой</button>
+            <button class="btn-grey" data-popup-btn-close>Верно</button>
+        </div>
+    </div>
+</section>
