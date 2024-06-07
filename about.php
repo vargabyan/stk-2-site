@@ -32,7 +32,18 @@ breadcrumb([['url' => '/catalog', 'name' => 'Каталог'], ['url' => '/about
 </section>
 
 
-
+<section class="core-container our-geography">
+    <div class="our-geography_cities-wrapper">
+        <h2 class="our-geography_header site-header">География наших объектов</h2>
+        <ul class="our-geography_cities" data-our-geography_cities></ul>
+    </div>
+    <div class="jvm-map-wrapper">
+        <div class="jvm-map" data-jvm-map></div>
+    </div>
+    <span class="mobile_our-geography_citi" data-mobile-our-geography-citi>
+        Новый Уренгой
+    </span>
+</section>
 
 
 <section class="core-container only-the-best-materials">

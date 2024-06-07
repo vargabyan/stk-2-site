@@ -722,99 +722,77 @@ document.addEventListener('input', e => {
 
 
 
+if ($('[data-jvm-map]').length > 0) {
+    $(function () {
+        let map,
 
-$(function () {
-    let map,
+            markers = [
+                {latLng: [66.09154570932817, 76.69073261132812], name: 'Новый Уренгой'},
+                {latLng: [66.09154570932817, 76.69073261132812], name: 'Новый Уренгой'},
+                {latLng: [55.01780552226469, 82.92033793359363], name: 'Новосибирск'},
+                {latLng: [49.725601014404965, 84.27272948413083], name: 'Алтай'},
+                {latLng: [61.245884615763735, 73.39989776171866], name: 'Сургут'},
+                {latLng: [51.64568026463799, 39.20518839843741], name: 'Воронеж'},
+                {latLng: [51.64568026463799, 39.20518839843741], name: 'Воронеж'},
+            ]
 
-        markers = [
-            { latLng: [67.15, 74.40], name: 'Ямало-Ненецкий автономный округ' },
-            { latLng: [61.032, 73, 69.214, 85], name: 'Ханты-Мансийский автономный округ' },
-            { latLng: [58.42, 61.20], name: 'Свердловская область' },
-            { latLng: [59.14, 56.08], name: 'Пермский край' },
-            { latLng: [57.50, 69.00], name: 'Тюменская область' },
-            { latLng: [64.17, 54.28], name: 'Республика коми' },
-            { latLng: [54.28, 56.16], name: 'Республика Башкортостан' },
-            { latLng: [68.50, 54.50], name: 'Ненецкий автономный округ' },
-            { latLng: [55.37, 39, 37.44, 20], name: 'Московская область' },
-            { latLng: [56.13, 73.16], name: 'Омская область' },
-            { latLng: [58.45, 82.08], name: 'Томская область' },
-            { latLng: [66.24, 129.10], name: 'Республика Якутия' },
-            { latLng: [53.33, 127.50], name: 'Амурская область' },
-            { latLng: [53.48, 109.20], name: 'Бурятия' },
-            { latLng: [54, 118], name: 'Забайкальский край' },
-            { latLng: [63.30, 43.00], name: 'Архангельская область' },
-            { latLng: [63.49, 33.00], name: 'Карелия' },
-            { latLng: [47.14, 47.14], name: 'Астраханская область' },
-            { latLng: [51.64268987149337, 39.195575361328046], name: 'Воронеж' },
-
-        ],
-        cityAreaData = []
-
-
-
-    map = new jvm.Map({
-        backgroundColor: 'transparent',
-        zoomOnScroll: false,
-        zoomButtons: false,
-        container: $('[data-jvm-map]'),
-        map: 'ru_merc',
-        regionsSelectable: false,
-        markersSelectable: false,
-        tu: false,
-        markers: markers[0],
-        markerStyle: {
-            initial: {
-                fill: '#f0c419',
-                stroke: '#505050',
-                "stroke-width": 6,
-                "stroke-opacity": 1,
-                r: 1
+        map = new jvm.Map({
+            backgroundColor: 'transparent',
+            zoomOnScroll: false,
+            zoomButtons: false,
+            container: $('[data-jvm-map]'),
+            map: 'ru_merc',
+            regionsSelectable: false,
+            markersSelectable: false,
+            markers: markers,
+            markerStyle: {
+                initial: {
+                    fill: '#9B9B9B',
+                    stroke: '#9B9B9B',
+                },
+                selected: {
+                    fill: '#454545',
+                    stroke: '#454545'
+                }
             },
-            selectedHover: {}
-        },
 
-        regionStyle: {
-
-            initial: {
-                fill: 'white',
-                stroke: 'black',
-                "stroke-width": 0.6,
-                "stroke-opacity": 11,
+            regionStyle: {
+                initial: {
+                    fill: 'white',
+                    stroke: 'black',
+                    "stroke-width": 0.6,
+                },
             },
-        },
-        series: {
-            markers: [{
-                attribute: 'r',
-                scale: [5, 15],
-                values: cityAreaData
-            }]
-        },
+        });
 
 
-    });
-
-    function addPlantsMarkers() {
-        let t = 0
-
-        setInterval(() => {
-            t++
-            map.addMarkers(markers[t]);
-
-            if (t === markers.length) {
-                t = 0
+        $(function() {
+            if (window.innerWidth > 520) {
+                markers.forEach(item => {
+                    $('[data-our-geography_cities]').append(`<li data-sity-id="${item.latLng}">${item.name}</li>`);
+                })
             }
-        }, 2000)
-    }
-    addPlantsMarkers();
 
+            let count = 0
+            let id = null;
 
-    // $( window ).resize(() => {
-    //     const windowWidth = $( window ).width()
-    //     const element = $( '.our-geography_cities-wrapper' )[0].width()
-    //     const widthEl = $( '[data-jvm-map]' )[0].width
-    //     console.log(element)
-    //
-    //     map.updateSize();
-    // });
+            setInterval(() => {
+                map.clearSelectedMarkers();
+                map.setSelectedMarkers([count]);
 
-});
+                if (window.innerWidth < 520) {
+                    $('[data-mobile-our-geography-citi]').text(markers[count].name)
+                } else {
+                    if (id) $(`[data-sity-id="${id}"]`).removeClass('active');
+                    $(`[data-sity-id="${markers[count].latLng}"]`).addClass('active');
+                    id = markers[count].latLng;
+                }
+
+                count++
+                if (count === markers.length) {
+                    count = 0
+                }
+            }, 2000)
+        })
+    });
+}
