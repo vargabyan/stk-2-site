@@ -187,12 +187,12 @@ $response_data_menu_link = [
                 </a>
                 <span class="core-head_logo-subtitle">добыча и поставка <br> нерудных материалов</span>
                 <div class="core-head_select-cities-wrapper" data-core-head-select-cities-wrapper>
+                    <div class="menu-mobile_popup-head" data-menu-mobile_btn-wrapper>
+                        <button class="menu-mobile_btn-back" data-menu-popup-mobile-btn-back>Назад</button>
+                        <button class="btn-close" data-menu-popup-mobile-btn-close></button>
+                    </div>
                     <span class="core-head_select-cities" data-core-head-select-cities-value>Новой Уренгой</span>
                     <div class="core-head_select-cities-form-wrapper" data-core-head-select-cities-form-wrapper>
-                        <div class="mobile-core-head_select-cities_head">
-                            <span class="mobile-core-head_select-cities_title">Новый Уренгой</span>
-                            <button class="btn-close" data-core-head-select-cities-btn-close></button>
-                        </div>
                         <form class="core-head_select-cities-form" action="" data-core-head_select-cities-form>
                             <label><input type="radio" name="city" value="Уфа">Уфа</label>
                             <label><input type="radio" name="city" value="Москва">Москва</label>
@@ -205,12 +205,28 @@ $response_data_menu_link = [
                     </div>
                 </div>
             </div>
-            <form action="" class="core-head_search-form">
-                <label class="core-head_search-label" for="">
-                    <input type="search" placeholder="Поиск">
-                    <button type="submit"></button>
+            <div class="core-head_search-form" data-core-head-search-form>
+                <div class="menu-mobile_popup-head" data-menu-mobile_btn-wrapper>
+                    <a class="mobil-core-head_logo" href="/">
+                        <img src="/images/logo.png" alt="logo">
+                    </a>
+                    <button class="btn-close" data-menu-popup-mobile-btn-close></button>
+                </div>
+                <label class="core-head_search-label">
+                    <input type="search" placeholder="Поиск" data-core-head-search-input>
+                    <a type="submit" href="search.php"></a>
                 </label>
-            </form>
+                <div class="core-head_search_items-wrapper" data-core-head-search-items-wrapper>
+                    <ul>
+                        <li class="active" data-core-head-search-item><a href="search.php">Щебень</a></li>
+                        <li class="active" data-core-head-search-item><a href="search.php">Песок</a></li>
+                        <li class="active" data-core-head-search-item><a href="search.php">Бетон</a></li>
+                        <li class="active" data-core-head-search-item><a href="search.php">Строительные растворы (смеси)</a></li>
+                        <li class="active" data-core-head-search-item><a href="search.php">Железобетонные изделия (ЖБИ)</a></li>
+                        <li class="active" data-core-head-search-item><a href="search.php">Торф</a></li>
+                    </ul>
+                </div>
+            </div>
             <ul class="core-head_contacts-wrapper">
                 <li><a href="mailto:pochta@gmail.com">pochta@gmail.com</a></li>
                 <li><a href="tel:+7 912 000 00 00">+7 912 000 00 00</a></li>
@@ -255,19 +271,29 @@ $response_data_menu_link = [
                 </div>
             </div>
         </div>
-    </div>
-    <div class="core-container mobile-header_container">
-        <a class="mobil-core-head_logo" href="/">
-            <img src="/images/logo.png" alt="logo">
-        </a>
         <button class="mobil-core-head_select-cities" data-mobil-core-head-select-cities></button>
     </div>
     <div class="menu-mobile-wrapper" data-menu-mobile-wrapper>
         <div class="menu-mobile_btn-wrapper" data-menu-mobile_btn-wrapper>
+            <a class="mobil-core-head_logo active" href="/" data-menu-mobile-logo>
+                <img src="/images/logo.png" alt="logo">
+            </a>
             <button class="menu-mobile_btn-back" data-menu-mobile-btn-back>Назад</button>
             <button class="btn-close" data-menu-mobile-btn-close></button>
         </div>
-        <div class="menu-mobile_menu-wrapper active" data-menu-mobile-menu-wrapper>
+        <div class="core-menu-mobile-wrapper active" data-core-menu-mobile-wrapper>
+            <span class="core-mobile_search-label" data-mobile-search-label>Поиск</span>
+            <span class="core-mobile_select-cities" data-mobile-select-cities-value>Новой Уренгой</span>
+            <nav class="navbar-mobile_links-wrapper">
+                <ul>
+                    <li><button data-mobile-btn-open-menu>Каталог</button></li>
+                    <li><a href="/contacts.php">Контакты</a></li>
+                    <li><a href="/about.php">О компании</a></li>
+                </ul>
+            </nav>
+            <button class="core-head_btn-order-call_ btn-transparent" data-order-popup="order-a-call">Заказать звонок</button>
+        </div>
+        <div class="menu-mobile_menu-wrapper" data-menu-mobile-menu-wrapper>
             <ul class="menu-mobile_menu">
                 <?php foreach ($response_data_menu_link as $item) { ?>
                     <li><p data-mobile-menu-btn-link-id="<?= $item['id'] ?>"><?= $item['name'] ?></p></li>
@@ -295,7 +321,7 @@ $response_data_menu_link = [
 </header>
 
 
-<section class="core-container popup-request-correct-city-wrapper active" data-popup-wrapper>
+<section class="core-container popup-request-correct-city-wrapper active_" data-popup-wrapper>
     <div class="popup-request-correct-city">
         <p class="popup-request-correct-city_title">Ваш город <span> Новый Уренгой?</span></p>
         <div class="popup-request-correct-city_btn-wrapper">

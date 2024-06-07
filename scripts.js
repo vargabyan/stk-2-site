@@ -453,15 +453,19 @@ document.addEventListener('click', e => {
     const btn = e.target.closest('[data-menu-mobile-btn-close]');
 
     if (btn) {
-        const mobileMenuWrapper = document.querySelector('.active[data-menu-mobile-wrapper]');
+        const mobileMenuWrapper = document.querySelector('[data-menu-mobile-wrapper]');
+        const mobileCoreMenu = mobileMenuWrapper.querySelector('[data-core-menu-mobile-wrapper]');
         const mobileMenu = mobileMenuWrapper.querySelector('[data-menu-mobile-menu-wrapper]');
         const mobileMenuBtnWrapper = mobileMenuWrapper.querySelector('.active[data-menu-mobile_btn-wrapper]');
         const mobileSubmenu = mobileMenuWrapper.querySelector('.active[data-menu-mobile-submenu-wrapper]');
         const mobileMenuBtnBack = mobileMenuWrapper.querySelector('.active[data-menu-mobile-btn-back]');
+        const mobileMenuLogo = mobileMenuWrapper.querySelector('[data-menu-mobile-logo]');
 
 
         mobileMenuWrapper.classList.remove('active');
-        mobileMenu.classList.add('active');
+        mobileMenu.classList.remove('active');
+        mobileCoreMenu.classList.add('active');
+        mobileMenuLogo.classList.add('active');
         if (mobileMenuBtnWrapper) mobileMenuBtnWrapper.classList.remove('active');
         if (mobileMenuBtnBack) mobileMenuBtnBack.classList.remove('active');
         if (mobileSubmenu) mobileSubmenu.classList.remove('active');
@@ -481,6 +485,23 @@ document.addEventListener('click', e => {
 })
 
 document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-mobile-btn-open-menu]');
+
+    if (btn) {
+        const mobileMenuWrapper = btn.closest('.active[data-menu-mobile-wrapper]');
+        const mobileCoreMenu = mobileMenuWrapper.querySelector('[data-core-menu-mobile-wrapper]');
+        const mobileMenu = mobileMenuWrapper.querySelector('[data-menu-mobile-menu-wrapper]');
+        const mobileMenuBtnBack = mobileMenuWrapper.querySelector('[data-menu-mobile-btn-back]');
+        const mobileMenuLogo = mobileMenuWrapper.querySelector('.active[data-menu-mobile-logo]');
+
+        mobileCoreMenu.classList.remove('active');
+        mobileMenuLogo.classList.remove('active');
+        mobileMenu.classList.add('active');
+        mobileMenuBtnBack.classList.add('active');
+    }
+})
+
+document.addEventListener('click', e => {
     const btn = e.target.closest('[data-mobile-menu-btn-link-id]');
 
     if (btn) {
@@ -488,12 +509,10 @@ document.addEventListener('click', e => {
         const mobileMenu = mobileMenuWrapper.querySelector('[data-menu-mobile-menu-wrapper]');
         const mobileSubmenu = mobileMenuWrapper.querySelector('[data-menu-mobile-submenu-wrapper]');
         const mobileMenuBtnWrapper = mobileMenuWrapper.querySelector('[data-menu-mobile_btn-wrapper]');
-        const mobileMenuBtnBack = mobileMenuWrapper.querySelector('[data-menu-mobile-btn-back]');
 
         mobileMenu.classList.remove('active');
         mobileSubmenu.classList.add('active');
         mobileMenuBtnWrapper.classList.add('active');
-        mobileMenuBtnBack.classList.add('active');
     }
 })
 
@@ -523,14 +542,31 @@ document.addEventListener('click', e => {
 
     if (btn) {
         const mobileMenuWrapper = document.querySelector('[data-menu-mobile-wrapper]');
+        const mobileCoreMenu = mobileMenuWrapper.querySelector('[data-core-menu-mobile-wrapper]');
         const mobileMenu = mobileMenuWrapper.querySelector('[data-menu-mobile-menu-wrapper]');
         const mobileSubmenu = mobileMenuWrapper.querySelector('[data-menu-mobile-submenu-wrapper]');
-        const mobileMenuBtnWrapper = mobileMenuWrapper.querySelector('[data-menu-mobile_btn-wrapper]');
+        const mobileMenuLogo = mobileMenuWrapper.querySelector('[data-menu-mobile-logo]');
 
-        mobileMenu.classList.add('active');
-        mobileSubmenu.classList.remove('active');
-        btn.classList.remove('active');
-        mobileMenuBtnWrapper.classList.remove('active');
+        if (mobileMenu.classList.contains('active')) {
+            mobileCoreMenu.classList.add('active');
+            mobileMenu.classList.remove('active');
+            btn.classList.remove('active');
+            mobileMenuLogo.classList.add('active');
+        }
+        if (mobileSubmenu.classList.contains('active')) {
+            mobileMenu.classList.add('active');
+            mobileSubmenu.classList.remove('active');
+        }
+    }
+})
+
+document.addEventListener('click', e => {
+    const mobileSearchInput = e.target.closest('[data-mobile-search-label]');
+
+    if (mobileSearchInput) {
+        const mobileSearchWrapper = document.querySelector('[data-core-head-search-form]');
+
+        mobileSearchWrapper.classList.add('mobile');
     }
 })
 
@@ -544,9 +580,17 @@ document.addEventListener('click', e => {
 
         btn.classList.toggle('rotate');
         section.classList.toggle('active');
-        if (window.innerWidth < 570) {
-            document.querySelector('body').style['overflow'] = 'hidden';
-        }
+    }
+})
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-mobile-select-cities-value]');
+
+    if (btn) {
+        const wrapper = document.querySelector('[data-core-head-select-cities-wrapper]');
+
+        wrapper.classList.add('mobile');
+        document.querySelector('body').style['overflow'] = 'hidden';
     }
 })
 
@@ -561,9 +605,34 @@ document.addEventListener('click', e => {
         modal.classList.remove('active');
         btn.classList.add('rotate');
         section.classList.add('active');
-        if (window.innerWidth < 570) {
+        if (window.innerWidth < 992) {
+            wrapper.classList.remove('mobile');
             document.querySelector('body').style['overflow'] = 'hidden';
         }
+    }
+})
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-menu-popup-mobile-btn-back]');
+
+    if (btn) {
+        const wrapper = btn.closest('.mobile');
+        const mobileMenuWrapper = document.querySelector('[data-menu-mobile-wrapper]');
+
+        wrapper.classList.remove('mobile');
+        mobileMenuWrapper.classList.add('active');
+    }
+})
+
+document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-menu-popup-mobile-btn-close]');
+
+    if (btn) {
+        const wrapper = btn.closest('.mobile');
+        const mobileMenuWrapper = document.querySelector('[data-menu-mobile-wrapper]');
+
+        wrapper.classList.remove('mobile');
+        mobileMenuWrapper.classList.remove('active');
     }
 })
 
@@ -578,7 +647,10 @@ document.addEventListener('click', e => {
 
         sortValue.classList.toggle('rotate');
         section.classList.toggle('active');
-        document.querySelector('body').style['overflow'] = '';
+        if (window.innerWidth < 992) {
+            wrapper.classList.remove('mobile');
+            document.querySelector('body').style['overflow'] = '';
+        }
     }
 })
 
@@ -587,13 +659,62 @@ document.addEventListener('click', e => {
 
     if (btn) {
         const wrapper = btn.closest('[data-core-head-select-cities-wrapper]');
-        const sortValue = wrapper.querySelector('[data-core-head-select-cities-value]');
+        const sectValue = wrapper.querySelector('[data-core-head-select-cities-value]');
         const section = wrapper.querySelector('[data-core-head-select-cities-form-wrapper]');
+        const sectionMobile = document.querySelector('[data-mobile-select-cities-value]');
 
-        sortValue.textContent = btn.value;
-        sortValue.classList.toggle('rotate');
+        sectValue.textContent = btn.value;
+        sectionMobile.textContent = btn.value;
+        sectValue.classList.toggle('rotate');
         section.classList.toggle('active');
-        document.querySelector('body').style['overflow'] = '';
+        if (window.innerWidth < 992) {
+            wrapper.classList.remove('mobile');
+            document.querySelector('body').style['overflow'] = '';
+        }
+    }
+})
+
+
+document.addEventListener('click', e => {
+    const searchInput = e.target.closest('[data-core-head-search-input]');
+    const searchInputValue = document.querySelector('[data-core-head-search-input]').value;
+    const searchItemsWrapper = e.target.closest('.active[data-core-head-search-items-wrapper]');
+
+    if (searchInputValue === '' && (!searchInput || !searchItemsWrapper)) {
+        const searchWrapper = document.querySelector('[data-core-head-search-form]');
+        const searchItemsWrapper_ = searchWrapper.querySelector('[data-core-head-search-items-wrapper]');
+
+        searchItemsWrapper_.classList.remove('active');
+    }
+})
+
+const searchInputAction = (e)  => {
+    const searchInput = e.target.closest('[data-core-head-search-input]');
+
+    if (searchInput) {
+        const searchWrapper = searchInput.closest('[data-core-head-search-form]');
+        const searchItemsWrapper = searchWrapper.querySelector('[data-core-head-search-items-wrapper]');
+
+        searchItemsWrapper.classList.add('active');
+    }
+}
+document.addEventListener('input', e => searchInputAction(e));
+document.addEventListener('click', e => searchInputAction(e));
+
+document.addEventListener('input', e => {
+    const searchInput = e.target.closest('[data-core-head-search-input]');
+
+    if (searchInput) {
+        const searchWrapper = searchInput.closest('[data-core-head-search-form]');
+        const searchItems = searchWrapper.querySelectorAll('[data-core-head-search-item]');
+
+        searchItems.forEach( item => {
+            if (item.textContent.toLocaleUpperCase().search(searchInput.value.toLocaleUpperCase()) > -1) {
+                item.classList.add('active')
+            } else {
+                item.classList.remove('active')
+            }
+        })
     }
 })
 
