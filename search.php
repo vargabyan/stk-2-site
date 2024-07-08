@@ -59,7 +59,7 @@ $response_data_often_ordering_in_bulk = [
                 <img class="often-ordering-in-bulk_item_img" src="<?= $item['image'] ?>" alt="">
                 <p class="often-ordering-in-bulk_item_title"><?= $item['title'] ?></p>
             </div>
-            <a class="often-ordering-in-bulk_item_btn btn-grey" href="<?= $item['url'] ?>">Закать</a>
+            <a class="often-ordering-in-bulk_item_btn btn-grey" href="<?= $item['url'] ?>">Заказать</a>
         </div>
     <?php } ?>
 </section>
@@ -136,7 +136,7 @@ $response_data_often_ordering_in_bulk = [
                             <img class="often-ordering-in-bulk_item_img" src="<?= $item['image'] ?>" alt="">
                             <p class="often-ordering-in-bulk_item_title"><?= $item['title'] ?></p>
                         </div>
-                        <a class="often-ordering-in-bulk_item_btn btn-grey" href="<?= $item['url'] ?>">Закать</a>
+                        <a class="often-ordering-in-bulk_item_btn btn-grey" href="<?= $item['url'] ?>">Заказать</a>
                     </div>
                 </div>
             <?php } ?>

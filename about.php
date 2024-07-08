@@ -3,7 +3,7 @@
 
 <?php
 require 'breadcrumb.php';
-breadcrumb([['url' => '/catalog', 'name' => 'Каталог'], ['url' => '/about', 'name' => 'О компании']]);
+breadcrumb([['url' => '/about', 'name' => 'О компании']]);
 ?>
 
 

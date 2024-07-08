@@ -290,8 +290,12 @@ $response_data_menu_link = [
                     <li><a href="/contacts.php">Контакты</a></li>
                     <li><a href="/about.php">О компании</a></li>
                 </ul>
+                <ul class="core-head_contacts-wrapper">
+                    <li><a href="mailto:pochta@gmail.com">pochta@gmail.com</a></li>
+                    <li><a href="tel:+7 912 000 00 00">+7 912 000 00 00</a></li>
+                </ul>
             </nav>
-            <button class="core-head_btn-order-call_ btn-transparent" data-order-popup="order-a-call">Заказать звонок</button>
+            <button class="core-head_btn-order-call-mobile btn-transparent" data-order-popup="order-a-call">Заказать звонок</button>
         </div>
         <div class="menu-mobile_menu-wrapper" data-menu-mobile-menu-wrapper>
             <ul class="menu-mobile_menu">

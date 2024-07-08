@@ -16,7 +16,7 @@ breadcrumb([['url' => '/catalog', 'name' => 'Каталог'], ['url' => '/', 'n
         </p>
         <div class="card-product_footer">
             <span class="card-product_In-stock">В наличии</span>
-            <button class="card-product_btn-order btn-grey" data-order-popup="order-products">Закать</button>
+            <button class="card-product_btn-order btn-grey" data-order-popup="order-products">Заказать</button>
         </div>
     </div>
     <img class="card-product_img" src="images/card-product-1.png" alt="image" data-card-product-img>
@@ -171,7 +171,7 @@ $response_data_often_ordering_in_bulk = [
                                 <img class="often-ordering-in-bulk_item_img" src="<?= $item['image'] ?>" alt="">
                                 <p class="often-ordering-in-bulk_item_title"><?= $item['title'] ?></p>
                             </div>
-                            <a class="often-ordering-in-bulk_item_btn btn-grey" href="<?= $item['url'] ?>">Закать</a>
+                            <a class="often-ordering-in-bulk_item_btn btn-grey" href="<?= $item['url'] ?>">Заказать</a>
                         </div>
                     </div>
                 <?php } ?>
